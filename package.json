@@ -1,8 +1,8 @@
 {
   "name": "groceries",
-  "version": "0.6.0",
+  "version": "0.5.1",
   "author": "Michael Craft",
-  "homepage": "https://github.com/SWDV-665/week-6-groceries-app-restful-services-mcraft3",
+  "homepage": "https://github.com/SWDV-665/week-5-ionic-native-mcraft3",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",

@@ -15,20 +15,31 @@ export class HomePage {
   // Class variable for angular template of title of home.html page
   title = "Grocery";
 
+  items = [];
+  errorMessage: string;
+
   constructor(
     public navCtrl: NavController,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public dataService: GroceriesServiceProvider,
     public inputDialogService: InputDialogServiceProvider,
-    public socialSharing: SocialSharing
-    ) {
+    public socialSharing: SocialSharing) {
+    dataService.dataChanged$.subscribe((dataChanged: boolean) => {
+      this.loadItems();
+    }); 
+  }
 
+  ionViewDidLoad() {
+    this.loadItems();
   }
 
   // Get and initialize items in dataService.
   loadItems() {
-    return this.dataService.getItems();
+    this.dataService.getItems()
+      .subscribe(
+        items => this.items = items,
+        error => this.errorMessage = <any>error);
   }
 
   // remove item with object and it's index as parameters.
