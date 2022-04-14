@@ -1,0 +1,8 @@
+page-home {
+  h3.no-item {
+    // can use either format below
+    // color: darkgoldenrod;
+    // color:    #488aff;
+    color: map-get($colors, 'primary');
+  }
+}
