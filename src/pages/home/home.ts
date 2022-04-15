@@ -15,7 +15,7 @@ export class HomePage {
   // Class variable for angular template of title of home.html page
   title = "Grocery";
 
-  items = [];
+  items: any = [];
   errorMessage: string;
 
   constructor(
@@ -25,9 +25,9 @@ export class HomePage {
     public dataService: GroceriesServiceProvider,
     public inputDialogService: InputDialogServiceProvider,
     public socialSharing: SocialSharing) {
-    dataService.dataChanged$.subscribe((dataChanged: boolean) => {
-      this.loadItems();
-    }); 
+      dataService.dataChanged$.subscribe((dataChanged: boolean) => {
+        this.loadItems();
+      }); 
   }
 
   ionViewDidLoad() {
@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   // Get and initialize items in dataService.
-  loadItems() {
+  loadItems(): any {
     this.dataService.getItems()
       .subscribe(
         items => this.items = items,

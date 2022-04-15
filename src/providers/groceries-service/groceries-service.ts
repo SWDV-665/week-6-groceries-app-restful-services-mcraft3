@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 export class GroceriesServiceProvider {
 
   // Array of items
-  items = [];
+  items: any = [];
 
   dataChanged$: Observable<boolean>;
 
